@@ -31,8 +31,8 @@ class WeatherStation:
         self.init_dht()
         self.init_clock()
         self.init_socket()
-        tim = Timer(-1)
-        tim.init(period=self.interval*1000, mode=Timer.PERIODIC, callback=self.update)
+        self.timer = Timer(-1)
+        self.timer.init(period=self.interval*1000, mode=Timer.PERIODIC, callback=self.update)
         self.update(None)
 
     def update(self, timer):
@@ -42,6 +42,9 @@ class WeatherStation:
         self.measure()
         self.update_lcd()
         self.send_data()
+
+    def stop(self):
+        self.timer.deinit()
 
     def measure(self):
         print('measure')
