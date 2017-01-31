@@ -75,12 +75,12 @@ class WeatherStation:
         if not self.socket:
             print('no_socket')
             return
-        data = 'weatherstation.temp.dht %.1f\nweatherstation.hum.dht %.0f\nweatherstation.temp.bmp %.1f\nweatherstation.pressure.bmp %.1f\nweatherstation.time %s\n' % (
-            self.dht.temperature(),
-            self.dht.humidity(),
-            self.bmp.temperature,
-            self.bmp.pressure,
-            self.clock.get_ts()
+        data = 'weatherstation.temp.dht {tempdht:.1f} {ts}\nweatherstation.hum.dht {humdht:.0f} {ts}\nweatherstation.temp.bmp {tempbmp:.1f} {ts}\nweatherstation.pressure.bmp {pressurebmp:.1f} {ts}\nweatherstation.time {ts} {ts}\n'.format(
+            tempdht=self.dht.temperature(),
+            humdht=self.dht.humidity(),
+            tempbmp=self.bmp.temperature,
+            pressurebmp=self.bmp.pressure,
+            ts=self.clock.get_ts()
         )
         try:
             print('writing socket')
