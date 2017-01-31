@@ -10,8 +10,8 @@ class WeatherStation:
     DHTPIN = 14 # DHT data pin
     BMPSCL = 5  # BMP I2C clock pin
     BMPSDA = 4  # BMP I2C data pin
-    DISSCL = 13 # LCD I2C clock pin
-    DISSDA = 12 # LCD I2C data pin
+    DISSCL = 12 # LCD I2C clock pin
+    DISSDA = 13 # LCD I2C data pin
     DEFAULT_LCD_ADDR = 0x27
     DEFAULT_INTERVAL = 10
     MEASURE_TRIES = 3
