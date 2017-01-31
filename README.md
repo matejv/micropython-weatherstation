@@ -1,6 +1,15 @@
 # micropython-weatherstation
 
-A really simple weather station built in [MicroPython](https://micropython.org/).
+A really simple weather station built with [NodeMCU](http://www.nodemcu.com/index_en.html) and [MicroPython](https://micropython.org/).
+
+## Features
+
+* Measures temperature, humidity and barometric pressure
+* Get correct time via [NTP](https://en.wikipedia.org/wiki/Network_Time_Protocol)
+* Display measurements on a built in LCD display
+* Send measurements to [Graphite](https://graphiteapp.org/)
+* Ability to connect to one of the predefined wireless networks
+* If it cannot connect to any of the defined wireless networks, run in access-point mode
 
 ## Hardware
 
@@ -11,7 +20,7 @@ A really simple weather station built in [MicroPython](https://micropython.org/)
 
 Links take you to the actual items I bought.
 
-## Connectiong the hardware
+## Connecting the hardware
 
 TODO
 
