@@ -136,12 +136,12 @@ class WeatherStation:
 
     def init_socket(self):
         print('init_socket')
-        if self.online and not self.socket:
+        if self.online:
             addr_info = socket.getaddrinfo(self.SERVER_NAME, self.SERVER_PORT)
             addr = addr_info[0][-1]
             self.socket = socket.socket()
             self.socket.connect(addr)
-        elif not self.online:
+        else:
             self.socket = None
 
     def init_clock(self):
